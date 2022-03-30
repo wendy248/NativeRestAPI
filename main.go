@@ -8,8 +8,8 @@ import (
 
 /*
 Catatan :
-Untuk melakukan pengujian masing-masing function, diperlukan aplikasi postman karena main_test.go
-hanya berisi pengetesan pada function POST saja.
+Untuk melakukan pengujian masing-masing function, sebaiknya menggunakan aplikasi postman.
+Hal ini dikarenakan main_test.go hanya berisi pengujian pada function POST saja.
 */
 
 func main() {
