@@ -120,7 +120,7 @@ func DeleteHandle(res http.ResponseWriter, r *http.Request) {
 	runJSON(res, message, http.StatusOK)
 }
 
-// Handler UPDATE / PUT
+// Function UPDATE / PUT
 func UpdateHandle(res http.ResponseWriter, r *http.Request) {
 	if r.Method != "PUT" {
 		message := []byte(`{"message": "HTTP method is not compatible"}`)
