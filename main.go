@@ -6,6 +6,12 @@ import (
 	"net/http"
 )
 
+/*
+Catatan :
+Untuk melakukan pengujian masing-masing function, diperlukan aplikasi postman karena main_test.go
+hanya berisi pengetesan pada function POST saja.
+*/
+
 func main() {
 
 	controller.Database[1] = controller.Student{ID: 1, Name: "budi", Age: 5}
