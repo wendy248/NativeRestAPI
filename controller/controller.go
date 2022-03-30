@@ -38,7 +38,7 @@ func GetHandle(res http.ResponseWriter, r *http.Request) {
 
 	value, err := strconv.Atoi(string(parts[2]))
 	if err != nil {
-		message := []byte(`{"message": "URL is not correct"}`)
+		message := []byte(`{"message": "Error while parsing ID URL to int"}`)
 		runJSON(res, message, http.StatusInternalServerError)
 		return
 	}
@@ -53,7 +53,7 @@ func GetHandle(res http.ResponseWriter, r *http.Request) {
 	// Parse data to JSON (output)
 	studentJSON, err := json.Marshal(&student)
 	if err != nil {
-		message := []byte(`{"message": "Parsing data error"}`)
+		message := []byte(`{"message": "Parsing data to JSON output error"}`)
 		runJSON(res, message, http.StatusInternalServerError)
 		return
 	}
@@ -76,7 +76,7 @@ func PostHandle(res http.ResponseWriter, r *http.Request) {
 
 	err := json.NewDecoder(payload).Decode(&student)
 	if err != nil {
-		message := []byte(`{"Message": "Parsing JSON input error"}`)
+		message := []byte(`{"Message": "Parsing JSON as input error"}`)
 		runJSON(res, message, http.StatusInternalServerError)
 		return
 	}
@@ -155,7 +155,7 @@ func UpdateHandle(res http.ResponseWriter, r *http.Request) {
 
 	err2 := json.NewDecoder(payload).Decode(&updateData)
 	if err2 != nil {
-		message := []byte(`{"Message": "Parsing JSON input error"}`)
+		message := []byte(`{"Message": "Parsing JSON as input error"}`)
 		runJSON(res, message, http.StatusInternalServerError)
 		return
 	}
